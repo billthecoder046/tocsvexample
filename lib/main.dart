@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   List<String> data2 = ['2', 'Ahmar Ch.', '2134123', '192834821'];
   List<String> data3 = ['3', 'Zenab B.', '22134123', '192834821'];
   List<String> data4 = ['4', 'Shayan S.', '2313413', '192834821'];
-  List<String> data5 = ['4', 'Haris S.', '2211413', '192234821'];
+  List<String> data5 = ['5', 'Haris S.', '2211413', '192234821'];
   String imageAssetsPath = 'assets/csvIcon.png';
 
   @override
