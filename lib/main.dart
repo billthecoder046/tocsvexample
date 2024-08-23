@@ -1,14 +1,15 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:to_csv/to_csv.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
   //This is Bill Code
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -34,9 +35,9 @@ class _HomePageState extends State<HomePage> {
     '912839812'
   ]; //Inner list which contains Data i.e Row
   List<String> data2 = ['2', 'Ahmar Ch.', '2134123', '192834821'];
-  List<String> data3 = ['3', 'Zenab B.', '22134123', '192834821'];
-  List<String> data4 = ['4', 'Shayan S.', '2313413', '192834821'];
-  List<String> data5 = ['5', 'Haris S.', '2211413', '192234821'];
+  List<String> data3 = ['3', 'Ahmar Ch.', '22134123', '192834821'];
+  List<String> data4 = ['4', 'Shayan S.', '2313413', '192834822'];
+  List<String> data5 = ['5', 'Shayan S.', '2211414', '192234821'];
   String imageAssetsPath = 'assets/csvIcon.png';
 
   @override
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           width: 100,
           child: Image.asset(imageAssetsPath),
         ),
-        Text("My CSV Data",style: TextStyle(color: Colors.black87),),
+        const Text("My CSV Data",style: TextStyle(color: Colors.black87),),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
@@ -222,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                     // bool value = await requestStoragePermission();
                     // if(value == true){
 
-                      await  myCSV(header, listOfLists,setHeadersInFirstRow:true,includeNoRow: true, sharing: false);
+                      await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false, removeDuplicates: true, showDuplicateValue:true,noDuplicatedCheckAfterSpecificRow: 3 );
                     // }else{
                     //   print("Permission not granted");
                     // }

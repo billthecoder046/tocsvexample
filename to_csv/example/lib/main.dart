@@ -1,13 +1,14 @@
-import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:to_csv/to_csv.dart' as exportCSV;
+import 'package:to_csv/to_csv.dart' as export_csv;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Text("My CSV Data",style: TextStyle(color: Colors.black87),),
+        const Text("My CSV Data",style: TextStyle(color: Colors.black87),),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
@@ -138,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
-                  exportCSV.myCSV(header, listOfLists);
+                  export_csv.myCSV(header, listOfLists);
                 })
           ],
         ),
