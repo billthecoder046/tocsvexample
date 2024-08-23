@@ -21,15 +21,15 @@ header.add('ID Number');
 * Also create a two lists which contains your list of rows as List<String>
 ```dart
   List<List<String>> listOfLists = []; //Outter List which contains the data List
-  List<String> data1 = ['1','Bilal Saeed','1374934','912839812']; //Inner list which contains Data i.e Row
-  List<String> data2 = ['2','Ahmar','21341234','192834821']; //Inner list which contains Data i.e Row
+List<String> data1 = ['1','Bilal Saeed','1374934','912839812']; //Inner list which contains Data i.e Row
+List<String> data2 = ['2','Ahmar','21341234','192834821']; //Inner list which contains Data i.e Row
 ```
 **Note: Length of elements present in Rows should be equal to the length of header list length**
 
 * Now add your data variables in listOfVisitor which is List of List of Strings actually.
 ```dart
   listOfLists.add(data1);
-  listOfLists.add(data2);
+listOfLists.add(data2);
 ```
 * Finally pass header and listOfVisitors to the package function like this:
 ```dart
@@ -45,9 +45,9 @@ Open it on excel or in any other app and Enjoy!
 Go to your project folder, ios/Runner/info.plist and Add these keys:
 ```dart
     <key>LSSupportsOpeningDocumentsInPlace</key>
-    <true/>
-    <key>UIFileSharingEnabled</key>
-    <true/>
+<true/>
+<key>UIFileSharingEnabled</key>
+<true/>
 ```
 ![iOSkeysImage](https://raw.githubusercontent.com/incrediblezayed/file_saver/main/images/ios.png)
 
@@ -60,8 +60,15 @@ Application supports iTunes file sharing (Boolean -> Yes)
 Supports opening documents in place (Boolean -> Yes)
 ![forIoSImage](https://raw.githubusercontent.com/incrediblezayed/file_saver/main/images/iOSXcode.png)
 
-## Recent Changes in New Version
-##### 1. Column headers can now be switched as the first element of each row.
+## Recent Changes in New Version 4.0.0
+##### 1. *) Added property emptyRowsConfig to add multiple empty rows on multiple places,
+######   *) Added property removeDuplicates to remove duplicate values in data,
+######   *) Added noDuplicatedCheckAfterSpecificRow to stopChecking duplicate rows after a certain row
+######   Take a look at this code:
+######  ```dart await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false, removeDuplicates: true, showDuplicateValue:true,noDuplicatedCheckAfterSpecificRow: 3 );```
+
+
+##### 2. Column headers can now be switched as the first element of each row.
 **When setHeadersInFirstRow is set to false like the following code:**
 ```dart
 await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true, sharing: false);
@@ -73,9 +80,7 @@ await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true, 
 
 ###### You can also set ```dart includeNoRow: false``` to remove No. row/column
 
-
-
-##### 2. Compatible with Dart 3 now. Compiled with Flutter 3.22.2 ##3.0.0 & resolved all flutter analyze issues
+##### 3. Compatible with Dart 3 now. Compiled with Flutter 3.22.2 ##3.0.0 & resolved all flutter analyze issues
 
 ## Additional information
 
