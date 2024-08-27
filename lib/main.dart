@@ -223,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                     // bool value = await requestStoragePermission();
                     // if(value == true){
 
-                      await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false, removeDuplicates: true, showDuplicateValue:true,noDuplicatedCheckAfterSpecificRow: 3 );
+                      await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false,emptyRowsConfig: {2:2}, removeDuplicates: true, showDuplicateValue:true,noDuplicatedCheckAfterSpecificRow: 3 );
                     // }else{
                     //   print("Permission not granted");
                     // }
