@@ -222,8 +222,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () async{
                     // bool value = await requestStoragePermission();
                     // if(value == true){
-
-                      await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false,emptyRowsConfig: {2:2}, removeDuplicates: true, showDuplicateValue:false,noDuplicatedCheckAfterSpecificRow: 3,transposeAfterRow: 3 );
+                      await  myCSV(header, listOfLists,setHeadersInFirstRow:false,includeNoRow: true,sharing: false,emptyRowsConfig: {0:4}, removeDuplicates: true, showDuplicateValue:false,noDuplicatedCheckAfterSpecificRow: 3,transposeAfterRow: 0 );
                     // }else{
                     //   print("Permission not granted");
                     // }
